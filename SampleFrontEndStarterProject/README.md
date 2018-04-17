@@ -1,5 +1,7 @@
 ## Akumina starter project
 
+Make sure to have NODE 8.9.1++
+
 npm install
 
 npm install -g typescript
