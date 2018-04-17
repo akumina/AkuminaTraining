@@ -1,0 +1,13 @@
+{
+    "WidgetsSourcePath": "src/js/widgets",
+    "WidgetPackageDestinationPath": "dist",
+    "WidgetPackageVersion": "4.0.0.0",
+    "Environments": [
+        {
+            "Name": "dev",
+            "AppManagerUrl": "https://[appmanagerurl]",
+            "AppManagerQueryKey": "[appmanagerquerykey]",
+            "SharepointUrl": "https://[tenant].sharepoint.com/sites/dev"
+        }
+    ]
+}
