@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<lists>
+  <list name="SampleList_AK" noCrawl="TRUE">
+    <Field Name="SampleText" DisplayName="SampleText" Type="Text" />
+    <Field Name="SampleNote" DisplayName="SampleNote" Type="Note" />
+    <Field Name="SampleChoice" DisplayName="SampleChoice" Type="Choice">
+      <CHOICES>
+        <CHOICE>Lime</CHOICE>
+        <CHOICE>Forest</CHOICE>
+        <CHOICE>Purple</CHOICE>
+      </CHOICES>
+      <Default>Lime</Default>
+    </Field>
+    <Field Name="SampleLink"  DisplayName="SampleLink" Type="URL" />
+    <Field Name="SampleNumber"  DisplayName="SampleNumber" Type="Number"  Decimals="0"/>
+    <Field Name="SampleBool" DisplayName="SampleBool" Type="Boolean">
+      <Default>1</Default>
+    </Field>
+    <Field Name="Person" DisplayName="Person" Type="UserMulti" UserSelectionMode="PeopleAndGroups" UserSelectionScope="0" Mult="TRUE" />
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Akumina Sample</Field>
+          <Field Name="SampleChoice">Lime</Field>
+          <Field Name="SampleLink">http://akumina.com/</Field>
+          <Field Name="SampleNumber">1030</Field>
+          <Field Name="SampleText">Akumina</Field>
+          <Field Name="SampleNote">InterChange</Field>
+          <Field Name="SampleBool">true</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Digital Workplace Sample</Field>
+          <Field Name="SampleChoice">Purple</Field>
+          <Field Name="SampleLink">http://akumina.com/products/interchange/digitalworkplace/</Field>
+          <Field Name="SampleNumber">50</Field>
+          <Field Name="SampleText">Office 365</Field>
+          <Field Name="SampleNote">Digital Workplace</Field>
+          <Field Name="SampleBool">false</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+  <list name="CompanyNews_AK" templateID="104" noCrawl="TRUE">
+    <Field Name="StartDate1"  DisplayName="Start Date" Type="DateTime" Required="TRUE">
+      <Default>[today]</Default>
+    </Field>
+    <Field Name="Summary"  DisplayName="Summary" NumLines="6" Type="Note" RichTextMode="FullHtml" RichText="TRUE" />
+    <Field Name="Seo_x002d_Title"  DisplayName="Seo-Title" Type="Text" />
+    <Field Name="Seo_x002d_Keywords"  DisplayName="Seo-Keywords" Type="Text" />
+    <Field Name="Seo_x002d_Description"  DisplayName="Seo-Description" Type="Note" />
+    <Field Name="FriendlyUrl"  DisplayName="FriendlyUrl" Type="Calculated" Required="FALSE" ColName="sql_variant1" StaticName="FriendlyUrl" Indexed="FALSE" ResultType="Text" Version="1" RowOrdinal="0">
+      <Formula>=[Title]</Formula>
+    </Field>
+    <Field Name="Color" DisplayName="Color" Type="Choice">
+      <CHOICES>
+        <CHOICE>Green</CHOICE>
+        <CHOICE>Orange</CHOICE>
+        <CHOICE>Red</CHOICE>
+      </CHOICES>
+      <Default>Green</Default>
+    </Field>
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Practice Area Open for Company Use</Field>
+          <Field Name="Summary">Check out all the cool custom widgets now available</Field>
+          <Field Name="Color">Orange</Field>
+          <Field Name="Seo_x002d_Title"></Field>
+          <Field Name="Seo_x002d_Keywords"></Field>
+          <Field Name="Seo_x002d_Description"></Field>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+  <list name="Calendar_AK" templateID="106" noCrawl="TRUE">
+    <Field Name="EventTitle" DisplayName="EventTitle" Type="Text" Required="TRUE" />
+    <Field Name="Body"  DisplayName="Body" NumLines="6" Type="Note" RichTextMode="FullHtml" RichText="TRUE" />
+    <Field Name="Seo_x002d_Title"  DisplayName="Seo-Title" Type="Text" />
+    <Field Name="Seo_x002d_Keywords"  DisplayName="Seo-Keywords" Type="Text" />
+    <Field Name="Seo_x002d_Description"  DisplayName="Seo-Description" Type="Note" />
+    <Field Name="FriendlyUrl"  DisplayName="FriendlyUrl" Type="Calculated" Required="FALSE" ColName="sql_variant1" StaticName="FriendlyUrl" Indexed="FALSE" ResultType="Text" Version="1" RowOrdinal="0">
+      <Formula>=[Title]</Formula>
+    </Field>
+    <Field Name="Featured" DisplayName="Featured" Type="Boolean">
+      <Default>0</Default>
+    </Field>
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">Practice Area Demo</Field>
+          <Field Name="EventTitle">Big Demo! Practice Area Revealed</Field>
+          <Field Name="fAllDayEvent">false</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+<list name="DeptMenu_AK" noCrawl="TRUE">
+    <Field Name="NodeType" DisplayName="NodeType" Type="Choice">
+      <CHOICES>
+        <CHOICE>Root</CHOICE>
+        <CHOICE>Category</CHOICE>
+        <CHOICE>Item</CHOICE>
+      </CHOICES>
+      <Default>Root</Default>
+    </Field>
+    <Field Name="Link"  DisplayName="Link" Type="URL" />
+    <Field Name="DisplayOrder"  DisplayName="DisplayOrder" Type="Number"  Decimals="0"/>
+    <Field Name="ParentItem" ID="{7FA6EEBA-2C2F-45D9-B0AE-ACF75345A583}"   DisplayName="ParentItem" Type="Lookup" ShowField="Title" List="Self"/>
+    <Field FieldRef="{7FA6EEBA-2C2F-45D9-B0AE-ACF75345A583}" Name="ParentItem_ID" DisplayName="ParentItem:ID" Type="Lookup" Required="FALSE" ShowField="ID" List="Self"></Field>
+    <Field FieldRef="{7FA6EEBA-2C2F-45D9-B0AE-ACF75345A583}" Name="ParentItem_Title" DisplayName="ParentItem:Title" Type="Lookup" Required="FALSE" ShowField="Title" List="Self"></Field>
+    <Field Name="Active" DisplayName="Active" Type="Boolean">
+      <Default>1</Default>
+    </Field>
+    <Field Name="Open_x0020_With"  DisplayName="Open With" Type="Choice" >
+      <CHOICES>
+        <CHOICE>Same Window</CHOICE>
+        <CHOICE>New Window</CHOICE>
+      </CHOICES>
+      <Default>Same Window</Default>
+    </Field>
+    <Field Type="Choice" DisplayName="LinkType" Name="LinkType">
+      <CHOICES>
+        <CHOICE>link</CHOICE>
+        <CHOICE>formlink</CHOICE>
+      </CHOICES>
+      <Default>link</Default>
+    </Field>
+    <Field Type="Number" DisplayName="FormID" Name="FormID" Decimals="0"/>
+    <Field Type="Choice" DisplayName="Icon" Name="Icon">
+      <CHOICES>
+        <CHOICE>none</CHOICE>
+        <CHOICE>tachometer</CHOICE>
+        <CHOICE>sitemap</CHOICE>
+        <CHOICE>calendar</CHOICE>
+        <CHOICE>photo</CHOICE>
+        <CHOICE>comments</CHOICE>
+        <CHOICE>question-circle</CHOICE>
+        <CHOICE>lock</CHOICE>
+      </CHOICES>
+      <Default>none</Default>
+    </Field>
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name="Title">DeptNav</Field>
+          <Field Name="NodeType">Root</Field>
+          <Field Name="DisplayOrder">0</Field>
+          <Field Name="ParentItem"></Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Landing Page</Field>
+          <Field Name="NodeType">Item</Field>
+          <Field Name="Link">{0}/pages/home.aspx</Field>
+          <Field Name="DisplayOrder">1</Field>
+          <Field Name="ParentItem">1;#DeptNav</Field>
+          <Field Name="ParentItem_ID">1</Field>
+          <Field Name="ParentItem_Title">DeptNav</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Announcements</Field>
+          <Field Name="NodeType">Category</Field>          
+          <Field Name="DisplayOrder">2</Field>
+          <Field Name="ParentItem">1;#DeptNav</Field>
+          <Field Name="ParentItem_ID">1</Field>
+          <Field Name="ParentItem_Title">DeptNav</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">First Announcement for Create &amp; Digital Solutions</Field>
+          <Field Name="NodeType">Item</Field>
+          <Field Name="Link">{0}/Announcements/First%20Announcement%20for%20%20Creative%20&amp;%20Digital%20Solutions</Field>
+          <Field Name="DisplayOrder">3</Field>
+          <Field Name="ParentItem">3;#Practice Announcements</Field>
+          <Field Name="ParentItem_ID">3</Field>
+          <Field Name="ParentItem_Title">Practice Announcements</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Pages</Field>
+          <Field Name="NodeType">Category</Field>
+          <Field Name="DisplayOrder">4</Field>
+          <Field Name="ParentItem">1;#DeptNav</Field>
+          <Field Name="ParentItem_ID">1</Field>
+          <Field Name="ParentItem_Title">DeptNav</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Team</Field>
+          <Field Name="NodeType">Category</Field>
+          <Field Name="DisplayOrder">6</Field>
+          <Field Name="ParentItem">1;#DeptNav</Field>
+          <Field Name="ParentItem_ID">1</Field>
+          <Field Name="ParentItem_Title">DeptNav</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Calendar</Field>
+          <Field Name="NodeType">Category</Field>
+          <Field Name="DisplayOrder">8</Field>
+          <Field Name="ParentItem">1;#DeptNav</Field>
+          <Field Name="ParentItem_ID">1</Field>
+          <Field Name="ParentItem_Title">DeptNav</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Creative &amp; Digital Solutions Sample Event</Field>
+          <Field Name="NodeType">Item</Field>
+          <Field Name="Link">{0}/Events/%20Creative%20&amp;%20Digital%20Solutions%20Sample%20Event</Field>
+          <Field Name="DisplayOrder">9</Field>
+          <Field Name="ParentItem">7;#Practice Calendar</Field>
+          <Field Name="ParentItem_ID">7</Field>
+          <Field Name="ParentItem_Title">Practice Calendar</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">The first practice page</Field>
+          <Field Name="NodeType">Item</Field>
+          <Field Name="Link">{0}/PracticePage/The%20first%20practice%20page</Field>
+          <Field Name="DisplayOrder">5</Field>
+          <Field Name="ParentItem">5;#Practice Pages</Field>
+          <Field Name="ParentItem_ID">5</Field>
+          <Field Name="ParentItem_Title">Practice Pages</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">Practice Team</Field>
+          <Field Name="NodeType">Item</Field>
+          <Field Name="Link">{0}/Pages/People.aspx</Field>
+          <Field Name="DisplayOrder">7</Field>
+          <Field Name="ParentItem">6;#Practice Team</Field>
+          <Field Name="ParentItem_ID">6</Field>
+          <Field Name="ParentItem_Title">Practice Team</Field>
+          <Field Name="Active">true</Field>
+          <Field Name="Open_x0020_With">Same Window</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </list>
+</lists>

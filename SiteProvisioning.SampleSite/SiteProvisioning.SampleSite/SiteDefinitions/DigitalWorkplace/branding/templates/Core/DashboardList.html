@@ -1,0 +1,88 @@
+﻿<div class="interAction">
+    <script>
+        $(document).ready(function () {
+            ShowDashboardUserInfo();
+
+            // customize save
+            $('.ak-customize-modal .ak-modal-save').click(function () {
+                $('.ak-customize-modal .ak-modal-save').attr("disabled", true);
+                UpdateDashboardControls();
+            });
+
+            $('.ak-dashboard-settings-btn').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                closeBtnInside: true,
+                showCloseBtn: true,
+                fixedBgPos: true
+            });
+            $('.ak-customize-modal .ak-modal-cancel').click(function (e) {
+                e.preventDefault();
+                $.magnificPopup.close();
+            });
+
+        });
+    </script>
+    <input id="ak-dashboard-controllist-id" type="hidden" value="{{ControlListId}}" />
+    <input id="ak-dashboard-controllist" type="hidden" value="{{ControlList}}" />
+    {{#if HasItems}}
+    {{#Items}}
+    {{#StartColumn}}<div class="ak-dashboard-cell small-12 medium-6 large-6 columns">
+        {{/StartColumn}}
+        <div class="ak-dashboard-widget">
+            {{{Snippet}}}
+        </div>
+        {{#EndColumn}}
+    </div>{{/EndColumn}}
+    {{/Items}}
+    {{else}}
+        <h2>You have no Dashboard Widgets Configured</h2>
+    {{/if}}
+</div>
+<div id="customize-popup" class="mfp-hide interAction ia-modal ak-customize-modal">
+    <div class="ia-modal">
+        <div id="successMessage" style="display:none;">
+            <div class="ia-upload-success">
+                Saved dashboard widget selection.
+            </div>
+        </div>
+        <div id="errorMessage" style="display:none;">
+            <div class="ia-upload-failed">
+                Error saving widget selection.
+            </div>
+        </div>
+        <p>
+            Select items to display on your dashboard.
+        </p>
+        <div class="ak-dashboard-check-list"> 
+            {{#if HasWidgets}}
+            {{#DashboardWidgets}}
+            <div class="ak-dashboard-check-item">
+                {{#if IsSelected}}
+                <input type="checkbox" id="{{Title}}" checked />
+                {{else}}
+                <input type="checkbox" id="{{Title}}" />
+                {{/if}}
+                <label for="{{Title}}">
+                    {{Title}}
+                </label>
+            </div>
+            {{/DashboardWidgets}}  
+            {{else}}
+                <div class="ia-upload-failed">
+                    No Dashboard widgets present. Please add Dashboard Widgets.
+                </div>
+            {{/if}}
+        </div>
+        <div class="ak-modal-buttons">
+            {{#if HasWidgets}}
+            <button class="ak-btn ak-modal-save">
+                Save
+            </button>
+            {{/if}}
+            <button class="ak-btn ak-quiet ak-modal-cancel">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>

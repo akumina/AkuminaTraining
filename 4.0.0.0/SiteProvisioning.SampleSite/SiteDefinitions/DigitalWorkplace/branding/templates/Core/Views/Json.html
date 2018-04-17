@@ -1,0 +1,4 @@
+<div class="ak-propertyview">
+    <input style="width:65%" data-bind="value: widgetprops().{{widgetPropertyName}}(), event: { keyup: function(data, event) { valueChanged(data, event, '{{widgetPropertyName}}' ) }  }" />    
+    <input style="width:25%" type="button" value="Validate" data-bind="attr:{ 'data-propname': '{{widgetPropertyName}}' }, event: {click: function(data, event){ ValidateJson(data, event, '{{widgetPropertyName}}') }}" />
+</div>

@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = "/Views/Shared/_LoginLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Authenticate", "Login", FormMethod.Post))
+{ 
+    <div class="ak-explorer-wrapper" style="padding: 40px;">
+        <div class="ak-sign-in">
+            <p>Please sign in with your network credentials below to access your Apps.</p>
+            <div class="ak-error-block">
+                <p><strong class="ak-error-title">Error: </strong>Could not sign in. Please try again or contact your network administrator if you continue to see this message.</p>
+            </div>
+            <div class="ak-sign-in-row">
+                <label class="ak-field-label">Username:</label>
+                <input id="userName" name="username" class="ak-text-input" type="text" />
+                <span class="ak-validate" id="user-ak-validate">Please enter your username.</span>
+            </div>
+            <div class="ak-sign-in-row">
+                <label class="ak-field-label">Password:</label>
+                <input id="pwd" class="ak-text-input" type="password" name="password"  />
+                <p class="ak-field-hint"><a href="http://login.microsoftonline.com/">Forgot Password?</a></p>
+                <span class="ak-validate" id="pwd-ak-validate">Please enter your password.</span>
+            </div>
+            <div class="ak-btn-row ak-btn-row-purple">
+                <input type="submit" class="ak-btn" value="Sign In">
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    function getFormData() {
+        var formData = new FormData();
+        formData.append('userName', $("#userName").val());
+        formData.append('pwd', $("#pwd").val());
+        return formData;
+    }
+    var returnUrl = '';
+    $(document).ready(function () {
+        returnUrl = getParameterByName('ReturnUrl');
+        if (returnUrl == '') {
+            returnUrl = '@Url.Action("Index", "Explorer")'
+        }
+        hideValidation();
+
+        $('.ak-sign-in #pwd').keyup(function (e) {
+            var code = (e.keyCode ? e.keyCode : e.which);
+            var term = $(this).val();
+            if (code == 13) {
+                hideValidation();
+                if ($("#userName").val() == '' && $("#pwd").val() == '') {
+                    $("#user-ak-validate").css('display', 'inline-block');
+                    $("#pwd-ak-validate").css('display', 'inline-block');
+                    return;
+                }
+                if ($("#userName").val() == '') {
+                    $("#user-ak-validate").css('display', 'inline-block');
+                    return;
+                }
+                if ($("#pwd").val() == '') {
+                    $("#pwd-ak-validate").css('display', 'inline-block');
+                    return;
+                }
+
+               
+
+            
+            }
+        });
+    });
+    function hideValidation() {
+        setTimeout(function () { $(".ak-sign-in .ak-error-block").css('display', 'none'); }, 2000);
+        $("#user-ak-validate").css('display', 'none');
+        $("#pwd-ak-validate").css('display', 'none');
+    }
+</script>

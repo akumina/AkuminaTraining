@@ -1,0 +1,76 @@
+﻿
+
+
+@if(ViewBag.ShowListingHeaderOptions != null && ViewBag.ShowListingHeaderOptions)
+{
+
+if (ViewHelperUtility.CanAddListItems() && !ViewHelperUtility.HideAddNewItem())
+{
+    <div class="ak-btn-row ak-btn-row-editor ak-approval-row ak-btn-row-purple">
+        <a href="@ViewHelperUtility.GetContentAppHomeUrl()Add" class="ak-btn ak-btn-add">Add New</a>
+    </div>
+}
+
+}
+
+
+
+@if (ViewBag.ShowItemHeaderOptions != null && ViewBag.ShowItemHeaderOptions)
+{
+
+<div class="ak-btn-row ak-btn-row-editor">
+    @if (ViewHelperUtility.PermitsApprovals())
+    {
+        if (ViewHelperUtility.SubmitOnly())
+        {
+            <a href="#" class="ak-btn ak-btn-publish">Submit</a>
+        }
+        else
+        {
+            <a href="#" class="ak-btn ak-btn-publish">Publish</a>
+        }
+    }
+    @if (ViewBag.Item.ItemId != 0)
+    {
+        /*if (ViewBag.PreviewList.Count == 0)
+        {
+            <a href="#" onclick="return false;" class="ak-btn ak-btn-preview ak-btn-disabled" target="_blank" title="Preview is not available for this App.">Preview</a>
+        }
+        else if (ViewBag.PreviewList.Count == 1)
+        {
+            <a href="@ViewBag.PreviewList[0].Value" data-token="@ViewBag.PreviewTokenList[0]" class="ak-btn ak-btn-preview" target="_blank">Preview</a>
+        }
+        else if (ViewBag.PreviewList.Count > 1)
+        {
+
+            <a href="#" class="ak-btn ak-btn-preview button split">Preview<span data-dropdown="drop2Preview"></span></a>
+                        <ul id="drop2Preview" class="f-dropdown" data-dropdown-content>
+
+                            @{ int previewIndex = 0;
+                                foreach (var preview in ViewBag.PreviewList)
+                                {
+                                    <li><a href="@preview.Value" data-token="@ViewBag.PreviewTokenList[previewIndex]" target="_blank" onclick="close_f_dropdown()">@preview.Text</a></li>
+                                    previewIndex++;
+                                }
+
+                            }
+                        </ul>
+         }*/
+    }
+    else
+    {
+        <a href="#" onclick="return false;" class="ak-btn ak-btn-preview ak-btn-disabled" target="_blank" title="Preview is not available for this App.">Preview</a>
+    }
+    @if (ViewHelperUtility.IsVersioningEnabled())
+    {
+        <a href="#" class="ak-btn ak-btn-save">Save</a>
+    }
+    else
+    {
+        <a href="#" class="ak-btn ak-btn-save ak-btn-disabled" title="SharePoint versioning is turned off, so Save is unavailable">Save</a>
+    }
+   
+    <a href="@ViewHelperUtility.GetContentAppHomeUrl()" class="ak-btn ak-btn-close" id="cancel">Cancel</a>
+</div>
+
+}

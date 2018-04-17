@@ -1,0 +1,52 @@
+﻿<!----------- DO NOT CHANGE THIS FILE, ANY CHANGES WILL NOT SHOW IN INTERCHANGE -->
+<!----------- DO NOT CHANGE THIS FILE, ANY CHANGES WILL NOT SHOW IN INTERCHANGE -->
+<!----------- DO NOT CHANGE THIS FILE, ANY CHANGES WILL NOT SHOW IN INTERCHANGE -->
+<!----------- DO NOT CHANGE THIS FILE, ANY CHANGES WILL NOT SHOW IN INTERCHANGE -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/Content/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/images/apple-touch-icon-114x114.png" />
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/jquery-ui-theme/jquery-ui-1.10.4.custom.min.css">
+    <!--Google Font-->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <!-- Akumina Base CSS -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/ak-base.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/ak-content-explorer.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/ak-content-explorer-responsive.css">
+    <!-- JQuery -->
+    <script src="/Content/js/vendor/jquery.js"></script>
+    <!-- Modernizr JS -->
+    <script src="/Content/js/vendor/modernizr.js"></script>
+</head>
+<body>
+    <div class="ak-editor">
+        <div class="ak-editor-header row">
+            <div class="ak-logo-wrapper">
+                <div class="ak-logo-emblem">
+                    <a href="@ViewHelperUtility.GetContentAppHomeUrl()">
+                        <img src="/Content/images/ak-logo.png" alt="Akumina Content Explorer" title="Akumina Content Explorer" />
+                    </a>
+                </div>
+                <a href="@ViewHelperUtility.GetContentAppHomeUrl()">
+                    <h1 class="ak-logo">InterChange SDK Harness Login</h1>
+                </a>
+            </div>
+        </div>
+        <div class="body-content ak-explorer-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+    <div id="ak-loading" class="ak-loading"> <span class="ak-loading-icon-wrap"><img src="/Content/images/ak-loading.gif" class="ak-loading-icon" alt="Loading" /></span> </div>
+  </body>
+</html>

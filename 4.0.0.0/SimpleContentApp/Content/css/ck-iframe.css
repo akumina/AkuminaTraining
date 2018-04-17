@@ -1,0 +1,19 @@
+.ms-dialog #s4-workspace{
+    background-color: white;
+    -webkit-overflow-scrolling: touch;
+  	overflow-y: scroll;
+}
+
+.ms-dialog #s4-bodyContainer{
+    margin: 0px;
+    width: auto; 
+    -webkit-overflow-scrolling: touch;
+}
+
+.ms-dlgContent #s4-bodyContainer{
+    margin: 0px;
+    width: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+

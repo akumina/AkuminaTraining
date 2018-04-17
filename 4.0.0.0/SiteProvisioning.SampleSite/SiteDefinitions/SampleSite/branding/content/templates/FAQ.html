@@ -1,0 +1,57 @@
+﻿<script>
+$(document).ready(function(){
+
+    $('.ak-faq-question').click(function (event) {
+
+        event.preventDefault();
+
+        //close any open questions
+        $(this).parent().siblings().children('.ak-faq-answer').slideUp();
+        $(this).parent().siblings().children('h5').children('a').children('i').removeClass('fa-rotate-90');
+
+        //open the answer for the question
+        $(this).siblings('.ak-faq-answer').slideDown();
+
+        //rotate icon
+        if (!$(this).children('a').children('i').hasClass('fa-rotate-90')) {
+            $(this).children('a').children('i').addClass('fa-rotate-90');
+        }
+        else
+        {
+            $(this).siblings('.ak-faq-answer').slideUp();
+            $(this).children('a').children('i').removeClass('fa-rotate-90');
+        }
+
+    });
+
+});
+</script>
+
+<style>
+    .ak-faq-list
+    {
+        overflow-x:visible;
+    }
+</style>
+
+<div class="interAction">
+    <div class="ak-faq-list ak-module">
+        <h4 class="ak-module-header">Frequently Asked Questions</h4>
+        <ul>
+            {{#if HasItems}}
+            {{#Items}}
+            {{#Active}}
+            <li>
+                <h5 class="ak-faq-question"><a href="#"><i class="fa fa-caret-right"></i>{{Title}}</a></h5>
+                <div class="ak-faq-answer"><p>{{{Answer}}}</p></div>
+            </li>
+            {{/Active}}
+            {{/Items}}
+            {{else}}
+            <h2>No FAQ in FAQ list</h2>
+            {{/if}}
+
+        </ul>
+        <a class="ak-faqs-more ak-module-more-link" href="{{ViewMoreLink}}">{{ViewMoreText}} &rsaquo;</a>
+    </div>
+</div>

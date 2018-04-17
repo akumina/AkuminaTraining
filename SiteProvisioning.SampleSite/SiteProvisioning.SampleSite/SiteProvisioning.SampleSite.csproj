@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0FF6CCA-EB79-4F42-8F1B-03C185D22CFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SiteProvisioning.SampleSite</RootNamespace>
+    <AssemblyName>SiteProvisioning.SampleSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Akumina.SiteProvisioning.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.SiteProvisioning.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.SiteProvisioning.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.SiteProvisioning.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.SiteProvisioning.CoreSteps">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.SiteProvisioning.CoreSteps.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.Logging">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.Interchange.Services">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.Interchange.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.Interchange.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.Interchange.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Akumina.Infrastructure">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SiteProvisioning.SampleSite\packages\akumina\Akumina.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Example.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleSite.cs" />
+    <Compile Include="SampleSubSite.cs" />
+    <Compile Include="Services\SampleService.cs" />
+    <Compile Include="Steps\AddSampleCSSToStyleLibrary.cs" />
+    <Compile Include="Steps\AddSampleImageFilesToStyleLibrary.cs" />
+    <Compile Include="Steps\CreateSiteFromUserSettings.cs" />
+    <Compile Include="Steps\SampleStep.cs" />
+    <Compile Include="Steps\SampleStepWithUserInputs.cs" />
+    <Compile Include="Steps\SetHomePage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-bold-webfont.eot" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-bold-webfont.woff" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-bold-webfont.woff2" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-medium-webfont.eot" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-medium-webfont.woff" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-medium-webfont.woff2" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-regular-webfont.eot" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-regular-webfont.woff" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FiraSans\firasans-regular-webfont.woff2" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\fontawesome-webfont.eot" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\fontawesome-webfont.ttf" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\fontawesome-webfont.woff" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\fontawesome-webfont.woff2" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\FontAwesome.otf" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\fontawesome-webfont.eot" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\fontawesome-webfont.ttf" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\fontawesome-webfont.woff" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\fontawesome-webfont.woff2" />
+    <None Include="SiteDefinitions\SampleSite\branding\css\fonts\FontAwesome.otf" />
+    <None Include="SiteDefinitions\SampleSite\UploadFiles\Documents\Intranet365-case-study-6-2-2016.pdf" />
+    <None Include="SiteDefinitions\SampleSubSite\UploadFiles\Documents\Five Most Common SharePoint Problems.pdf" />
+    <None Include="SiteDefinitions\SampleSubSite\UploadFiles\Documents\Intranet365-case-study-6-2-2016.pdf" />
+    <None Include="SiteDefinitions\SampleSubSite\UploadFiles\Documents\Intranet365-ClickLaunchDone-06012016.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\DashboardList.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Loading.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Views\Checkbox.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Views\Default.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Views\Json.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Views\Label.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Views\TemplatePicker.html" />
+    <Content Include="SiteDefinitions\Example\ProvisionerFiles\js\example.js" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\AdditionalMasterMarkup.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\DebugPopup.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Error.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\Tray.html" />
+    <Content Include="SiteDefinitions\DigitalWorkplace\branding\templates\Core\WidgetManager.html" />
+    <Content Include="SiteDefinitions\SampleSite\branding\content\templates\FAQ.html" />
+    <Content Include="SiteDefinitions\SampleSite\branding\content\xmlfile1.xml" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\digitalworkplace.css" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\fonts\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\fonts\OFL.txt" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\fonts\Sample1.xml" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\sample-styles.css" />
+    <Content Include="SiteDefinitions\SampleSite\branding\css\themes\custom.css" />
+    <Content Include="SiteDefinitions\SampleSite\branding\images\ia-loader-plain.gif" />
+    <Content Include="SiteDefinitions\SampleSite\branding\images\ia-loader.gif" />
+    <Content Include="SiteDefinitions\SampleSite\branding\img\site-logo-1-5x.png" />
+    <Content Include="SiteDefinitions\SampleSite\branding\img\site-logo-2x.png" />
+    <Content Include="SiteDefinitions\SampleSite\branding\img\site-logo.png" />
+    <Content Include="SiteDefinitions\SampleSite\branding\js\digitalworkplace.min.js" />
+    <Content Include="SiteDefinitions\SampleSite\branding\js\digitalworkplace.vendor-nomin.js" />
+    <Content Include="SiteDefinitions\SampleSite\branding\js\digitalworkplace.vendor.min.js" />
+    <Content Include="SiteDefinitions\SampleSite\branding\js\sample-script.js" />
+    <Content Include="SiteDefinitions\SampleSite\ContentEditor\ContentEditor.xml" />
+    <Content Include="SiteDefinitions\SampleSite\ContentTypes\ContentTypes.xml" />
+    <Content Include="SiteDefinitions\SampleSite\ListDefinitions\Lists.xml" />
+    <Content Include="SiteDefinitions\SampleSite\MasterPages\samplemaster.html" />
+    <Content Include="SiteDefinitions\SampleSite\PageContent\pages.xml" />
+    <Content Include="SiteDefinitions\SampleSite\PageLayouts\Sample1ColumnPageLayout.aspx" />
+    <Content Include="SiteDefinitions\SampleSite\PageLayouts\SampleHomePageLayout.aspx" />
+    <Content Include="SiteDefinitions\SampleSite\PageLayouts\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SiteDefinitions\SampleSite\Pages\Elements.xml" />
+    <Content Include="SiteDefinitions\SampleSite\ProvisionerFiles\js\samplesite.js" />
+    <Content Include="SiteDefinitions\SampleSubSite\ContentEditor\ContentEditor.xml" />
+    <Content Include="SiteDefinitions\SampleSubSite\ListDefinitions\Lists.xml" />
+    <Content Include="SiteDefinitions\SampleSubSite\PageContent\pages.xml" />
+    <Content Include="SiteDefinitions\SampleSubSite\Pages\Elements.xml" />
+    <Content Include="SiteDefinitions\SampleSubSite\ProvisionerFiles\js\samplesubsite.js" />
+    <Content Include="SiteDefinitions\SampleSubSite\UploadFiles\Images\dept-news-01.jpg" />
+    <Content Include="SiteDefinitions\SampleSubSite\UploadFiles\Images\dept-news-02.jpg" />
+    <Content Include="SiteDefinitions\SampleSubSite\UploadFiles\Images\dept-news-03.jpg" />
+    <Content Include="SiteDefinitions\SampleSubSite\UploadFiles\Images\dept-news-04.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

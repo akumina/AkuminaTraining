@@ -1,0 +1,28 @@
+﻿<div id="ss_menu">
+    {{#Buttons}}
+        <div>
+                <i id="{{Id}}" class="fa {{Icon}}"></i>
+        </div>
+    {{/Buttons}}
+    <div class="menu">
+        <div class="share" id="ss_toggle" data-rot="180">
+            <img src='http://www.akumina.com/images/akuminatriangle-100x100.png' />
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $('#widgetedit').on('click', function (ev) {
+
+        Akumina.AddIn.Utilities.ToggleWidgetManager();
+
+    });
+
+    $('#debug').on('click', function (ev) {
+
+        Akumina.AddIn.Utilities.ToggleDebugger();
+
+    });
+
+
+</script>

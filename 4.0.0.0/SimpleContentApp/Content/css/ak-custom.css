@@ -1,0 +1,14 @@
+.ms-rtetoolbarmenu img {
+    max-width: none;
+}
+
+.requiredIndicator:after {
+    content: "*";
+    color: #c8360f;
+}
+
+.ak-ids-accordionToggle {
+    float:left;
+    margin-top:.25rem;
+    margin-left:-1.5rem;
+}

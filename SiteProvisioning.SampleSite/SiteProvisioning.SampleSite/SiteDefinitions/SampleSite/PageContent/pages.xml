@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages xmlns:ak="http://www.w3.org/ak">
+  <page name="Home.aspx">
+	<zone name="WebPartZone1">
+		<contenteditor>
+        <h2>Sample home page</h2>
+		</contenteditor>
+	</zone>
+	<zone name="WebPartZone2">
+		<contenteditor>
+      <h3>Some sample content 2</h3>
+		</contenteditor>
+	</zone>
+	<zone name="WebPartZone3">
+		<contenteditor>
+      <h4>Some sample content 3</h4>
+		</contenteditor>
+	</zone>
+  </page>
+  <page name="Sample.aspx">
+	<zone name="WebPartZone1">
+		<contenteditor>
+			This is a sample page
+		</contenteditor>
+	</zone>
+  </page>
+</pages>

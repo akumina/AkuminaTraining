@@ -1,0 +1,57 @@
+<div class="interAction mfp-hide ia-modal mmModal">
+    <div class="ia-library-upload-reqs">
+        <h2 class="ia-modal-heading">Widget Manager</h2>
+        <div class="ia-form-error" style="display: none;">
+            <p>Please correct the following errors and try again.</p>
+        </div>
+        {{#unless HasWidgetProperties}}
+        <div class="ia-form-error">
+            <p>Old snippet does not support editing properties.</p>
+        </div>
+        {{/unless}}
+        <div>
+            <ul>
+                {{#if HasWidgetProperties}}
+                <li>
+                    <table id="widgetitem" width="100%">
+                        <tr>
+                            <th align="left" width="20%">Property Name</th>
+                            <th align="left" width="40%">Property Value</th>
+                        </tr>
+                        {{#widgetprops}}
+                        {{#if DisplayProperty}}
+                        <tr height="40px">
+                            <td data-propname="{{key}}"><label style="width:90%" class="widgetpropkey" type="text">{{key}}</label></td>
+                            <td data-propval="{{value}}">
+                                {{#if HasView}}
+                                {{{ViewHtml}}}
+                                {{else}}
+                                <input style="width:90%" class="widgetpropval" type="text" value="{{value}}" />
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/if}}
+                        {{/widgetprops}}
+                    </table>
+
+                </li>
+                {{else}}
+                <li>Snippet: <textarea style="width:600px;height:75px;">{{SnippetHtml}}</textarea></li>
+                {{/if}}
+
+            </ul>
+            <div>Minutes Remaing in Cache: {{CacheTimeout}}</div>
+        </div>
+        <!-- ia-form-->
+        <div style="clear: both;">&nbsp;</div>
+        <div class="ia-button-row">
+            {{#if HasWidgetProperties}}
+            <a class="ia-button ia-upload-confirm" data-bind="click:UpdateWidgetProperties">Update</a>
+            {{/if}}
+            <a class="ia-button secondary ia-upload-cancel" href="#">Cancel</a>
+        </div>
+    </div>
+    <!-- ia-library-upload-reqs -->
+</div>
+<div class="interAction" id="innerMenuManager">
+</div>

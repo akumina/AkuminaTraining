@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+  <page name="Sample.aspx" layout="Sample1ColumnPageLayout.aspx" title="Sample Page"/>
+  <page name="Home.aspx" layout="SampleHomePageLayout.aspx" title="Home Page"/>
+</pages>

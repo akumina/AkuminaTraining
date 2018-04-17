@@ -1,0 +1,37 @@
+﻿@{
+    Layout = ViewHelperUtility.GetContentAppLayout();
+}
+<h2>Index</h2>
+<p>
+  MY SIMPLE CONTENT APP
+</p>
+
+<h3>user</h3>
+
+HELLO TEAM!!
+
+
+<ul>
+    <li>Login ID: @ViewBag.MappingUser.Id</li>
+    <li>Login Name: @ViewBag.MappingUser.LoginName</li>
+    <li>Login TItle: @ViewBag.MappingUser.Title</li>
+</ul>
+
+<h3>settings</h3>
+<ul>
+    @foreach (var setting in ViewBag.Settings)
+    {
+        <li>@setting.Name - @setting.Value</li>
+
+    }
+</ul>
+<h3>list items</h3>
+
+<ul>
+    @foreach (var item in ViewBag.Items)
+    {
+        <li><strong>Item Title:</strong> @item.Title</li>
+        <li><strong>Item DateCreated:</strong> @item.DateCreated</li>
+        <li><strong>Item DateModified:</strong> @item.DateModified</li>
+    }
+</ul>

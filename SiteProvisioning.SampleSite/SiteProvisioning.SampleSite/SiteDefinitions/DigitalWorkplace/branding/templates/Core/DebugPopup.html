@@ -1,0 +1,17 @@
+﻿<div class="interAction mfp-hide ia-modal debug-popup">
+    <div>
+        <h2 class="ia-modal-heading"><i>Debug Information - {{Version}}</i></h2>
+        <input type="button" value="Refresh All Cache" id="refreshCache" style="margin:0px" />
+        <input type="button" value="Refresh Content Cache" id="refreshContentCache" />
+        <input type="button" value="Refresh Templates Cache" id="refreshTemplateCache" /><br /><br />
+        <table style="width:100%">
+            {{#Items}}
+                {{#if IsHeading}}
+                    <tr><td><h2>{{Key}}</h2></td><td>{{Value}}</td></tr>
+                {{else}}
+                    <tr style="height:15px;"><td>{{Key}}</td><td>{{Value}}</td></tr>
+                {{/if}}
+            {{/Items}}
+        </table>
+    </div>
+</div>

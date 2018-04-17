@@ -1,0 +1,4 @@
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<User ID="23497" DisplayName="Doe, John S" GivenName="John" MiddleInitial="S" Surname="Doe" Mail="jdoe@akuminasample.com" JobTitle="Developer" Organization="Sample Organization 1" Section="Sample Organization Product" Division="North America" Department="Engineering" OfficeLocation="Nashua, NH"/>
+</Users>
+

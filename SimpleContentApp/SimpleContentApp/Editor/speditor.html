@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Editor</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <link href="/editor/sp/styles/forms.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/editor/sp/MSAjaxScriptResource.js"></script>
+    <script type="text/javascript" src="/editor/sp/init.js"></script>
+    <script type="text/javascript" src="/editor/sp/core.debug.js"></script>
+    <script type="text/javascript" src="/editor/sp/initstrings.js"></script>
+    <script type="text/javascript" src="/editor/sp/strings.js"></script>
+    <script type="text/javascript" src="/editor/sp/form.debug.js"></script>
+    <script type="text/javascript" src="/editor/sp/spedit.js"></script>
+    <script type="text/javascript" src="/editor/sp/sp.core.debug.js"></script>
+    <script type="text/javascript" src="/editor/sp/sp.ui.rte.debug.js"></script>
+    <script type="text/javascript" src="/editor/sp/sp.init.debug.js"></script>
+    <script type="text/javascript" src="/editor/sp/SP.Runtime.debug.js"></script>
+</head>
+<body>
+    <form>
+        <div id="editarea">
+        </div>
+
+        <script type="text/javascript">document.getElementById("editarea").innerHTML = getTextArea("ak_sp_rte", '<div>hello dude</div>', ''); attachRTE(null);</script>
+        <input type="button" onclick="getVal();" value="GetVal" />
+        <script type="text/javascript">
+            function changeVal() {
+                //alert('changed');
+                document.getElementById("ak_sp").innerHTML = (RTE_GetEditorDocument("ak_sp_rte")).body.innerHTML;
+            }
+            function getVal() {
+                $("#ak_sp_rte").val((RTE_GetEditorDocument("ak_sp_rte_rte")).body.innerHTML);
+                //alert((RTE_GetEditorDocument("ak_sp_rte")).body.innerHTML);
+                alert($("#ak_sp_rte").val());
+            }
+
+        </script>
+    </form>
+</body>
+</html>
