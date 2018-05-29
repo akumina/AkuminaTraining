@@ -26,4 +26,8 @@ var args = {
     "sppassword": ""
 };
 
+//use extra parameters if deploying different language widgets
+//extra parameter -  langid 1033
+//extra paramater -  langcode en-US
+
 exeCute('.\\tools\\Akumina.SiteDeployer.exe options ' + args.options + ' envdir ' + args.envdir + ' assetdirectory ' + args.assetdirectory + ' spdirectory ' + args.spdirectory + ' spurl ' + args.spurl + ' spuser ' + args.spuser + ' sppassword ' + args.sppassword);
