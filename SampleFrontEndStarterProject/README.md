@@ -23,6 +23,10 @@ Edit webpack.config.js (and put your widget name in - this will be automatic in 
 
 ## Changelist
 
+7.30.18
+
+-Added versioning info - added updated Exit codes for failed steps - introduced diagnostic mode (doc coming soon)
+
 5.29.18
 
 -Added support for langid and langcode parameters for multilingual widget instances
