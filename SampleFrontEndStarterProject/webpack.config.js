@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var genWidgetConfig = function (widgetName) {
-    var ext = '.ts';
+    var ext = '.js';
     var extOut = '.js';
     //var c = 'MyCustomNamespace';
     return {
@@ -11,12 +11,13 @@ var genWidgetConfig = function (widgetName) {
         entry: './src/js/widgets/' + widgetName + '/js/widgets/' + widgetName + ext,
         output: {
             filename: widgetName + extOut,
-            path: path.resolve(__dirname, 'dist/packages/widgets'),
+            path: path.resolve(__dirname, 'dist/widgets'),
             //publicPath: './dist/'
         },
         externals: {
             "akumina-core": "Akumina",
-            "jquery": "jQuery"
+            "jquery": "jQuery",
+            "Akumina": "Akumina"
         },
         resolve: {
             extensions: ['.ts']
@@ -25,7 +26,7 @@ var genWidgetConfig = function (widgetName) {
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery",
-                Akumina: "akumina"
+                Akumina: "Akumina"
             }),
         ],
         module: {
