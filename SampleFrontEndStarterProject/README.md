@@ -1,5 +1,7 @@
 ## Akumina starter project
 
+### A more complete starter project can be found [here](https://github.com/akumina/AkuminaDev/tree/master/FrontEndSimple)
+
 Make sure to have NODE 8.9.1++
 
 npm install
