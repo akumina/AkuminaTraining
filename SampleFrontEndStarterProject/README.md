@@ -1,6 +1,8 @@
-## Akumina starter project
+## Akumina starter project (Depricated)
 
 ### A more complete starter project can be found [here](https://github.com/akumina/AkuminaDev/tree/master/FrontEndSimple)
+
+---
 
 Make sure to have NODE 8.9.1++
 
